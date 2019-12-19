@@ -3,12 +3,15 @@ kind: pipeline
 name: build
 
 steps:
-- name: build
+- name: strings
   image: alpine
   commands:
   - echo hello world
+  - ls -l
+  - strings sample.bin > found-strings.txt
 - name: teppo
   image: alpine
   commands:
   - echo hello teppo
+  - ls -l
 
